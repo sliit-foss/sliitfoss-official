@@ -2,9 +2,9 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <div className="bg-black px-[50px] py-[30px] flex flex-col gap-[40px]">
+    <div className="bg-black px-[20px] py-[30px] md:px-[50px] md:py-[30px]  flex flex-col gap-[40px]">
       <div>
-        <div className="flex gap-[250px]">
+        <div className="flex gap-[100px] md:gap-[200px]">
           <div>
             <h1 className="font-montserrat font-medium text-[21px] ">
               Socials
