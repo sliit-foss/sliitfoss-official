@@ -8,16 +8,18 @@ export default function NavBar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="w-screen flex items-center justify-center">
+    <div className="w-screen flex items-center justify-center md:mt-[25px]">
       <nav className="md:rounded-[24px] bg-[linear-gradient(90deg,rgba(141,198,255,0.61)_0%,rgba(173,101,255,0.61)_100%)] p-[2px] w-screen md:w-[981px] md:flex md:items-center md:justify-center">
         <div className="md:rounded-[24px] bg-white text-black flex flex-col justify-between md:flex-row md:w-[981px] px-[5px] py-[5px] md:px-[20px] md:py-[5px]">
           <div className="flex items-center justify-between">
             <Image
-              src="/assets/logo-dark.png"
+              src="/assets/logo-dark.svg"
               alt="Logo"
-              width={76}
-              height={45}
+              width={0}
+              height={0}
+              className="w-[76px] h-auto"
             />
+
             <div className="md:hidden">
               <button onClick={() => setOpen(!open)}>
                 {open ? 'Close' : 'Menu'}
