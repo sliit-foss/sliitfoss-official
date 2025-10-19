@@ -120,3 +120,38 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Bricolage Grotesque font (add font files under /public/fonts or update URLs) */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src:
+    local('Bricolage Grotesque'),
+    url('/fonts/BricolageGrotesque-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-bricolage {
+  font-family:
+    'Bricolage Grotesque',
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial;
+}
+
+/* Reusable heading gradient (horizontal) */
+:root {
+  --heading-gradient: linear-gradient(90deg, #2fa5ff 0%, #9c09ff 100%);
+}
+
+.heading-gradient {
+  background-image: var(--heading-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
