@@ -1,4 +1,4 @@
-import EventSlider from '@/app/components/events/EventSlider';
+import EventSlider from '@/app/components/event/EventSlider';
 
 function Events() {
   return (
