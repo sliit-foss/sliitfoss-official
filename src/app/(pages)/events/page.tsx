@@ -1,13 +1,13 @@
 import EventSlider from '@/app/components/event/EventSlider';
 import GradTitle from '@/app/components/GradTitle';
-import WebinarSlider from '@/app/components/webinar/WebinarSlider';
-import HeroSection from '@/app/components/HeroSection';
+import WebinarSlider from '@/app/components/event/WebinarSlider';
+import EventHero from '@/app/components/event/EventHero';
 
 function Events() {
   return (
     <div>
       {/* TODO add navbar */}
-      <HeroSection />
+      <EventHero />
       <br />
       <div className="p-6">
         <GradTitle content={'Events'} />

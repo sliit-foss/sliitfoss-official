@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { events } from '@/app/const/Events';
 
-const HeroSection = () => {
+const EventHero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Auto change every 5 seconds
@@ -60,4 +60,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default EventHero;
