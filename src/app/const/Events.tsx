@@ -5,4 +5,5 @@ export const events: {
   date: string;
   readMoreLink: string;
   imageUrl: string;
+  status: string;
 }[] = [];
