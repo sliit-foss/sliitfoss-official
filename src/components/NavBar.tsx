@@ -13,7 +13,7 @@ export default function NavBar() {
         <div className="md:rounded-[24px] bg-white text-black flex flex-col justify-between md:flex-row md:w-[100%] px-[5px] py-[5px] md:px-[20px] md:py-[5px]">
           <div className="flex items-center justify-between">
             <Image
-              src="/assets/logo-dark.svg"
+              src="/assets/logos/logo-dark.svg"
               alt="Logo"
               width={0}
               height={0}
