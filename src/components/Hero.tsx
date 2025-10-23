@@ -11,7 +11,7 @@ export default function Hero() {
         dotSize={1}
         gap={40}
       />
-      <div className="absolute top-0 left-0 h-full grid content-center-safe z-40">
+      <div className="absolute top-0 left-0 h-full grid content-center-safe z-40 w-full h-full">
         <h1 className="grid justify-center font-bold text-3xl md:text-5xl lg:text-7xl font-sans mt-30 text-black">
           SLIIT FOSS Community
         </h1>
