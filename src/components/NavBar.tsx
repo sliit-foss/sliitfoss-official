@@ -17,8 +17,8 @@ export default function NavBar() {
               <Image
                 src={navbarData.logo.imageUrl}
                 alt="Logo"
-                width={0}
-                height={0}
+                width={76}
+                height={76}
                 className="w-[76px] h-auto"
               />
             </Link>
