@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { navbarData } from '@/lib/data/navbar';
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
@@ -12,13 +13,15 @@ export default function NavBar() {
       <nav className="md:rounded-[24px] bg-gradient-primary p-[2px] w-screen md:w-[70%] md:flex md:items-center md:justify-center">
         <div className="md:rounded-[24px] bg-white text-black flex flex-col justify-between md:flex-row md:w-[100%] px-[5px] py-[5px] md:px-[20px] md:py-[5px]">
           <div className="flex items-center justify-between">
-            <Image
-              src="/assets/logos/logo-dark.svg"
-              alt="Logo"
-              width={0}
-              height={0}
-              className="w-[76px] h-auto"
-            />
+            <Link href={navbarData.logo.link}>
+              <Image
+                src={navbarData.logo.imageUrl}
+                alt="Logo"
+                width={0}
+                height={0}
+                className="w-[76px] h-auto"
+              />
+            </Link>
 
             <div className="md:hidden">
               <button onClick={() => setOpen(!open)}>
@@ -31,12 +34,11 @@ export default function NavBar() {
               open ? 'flex' : 'hidden md:flex'
             }`}
           >
-            <Link href={'#'}>Home</Link>
-            <Link href={'#'}>About</Link>
-            <Link href={'#'}>Events</Link>
-            <Link href={'#'}>Blogs</Link>
-            <Link href={'#'}>Board</Link>
-            <Link href={'#'}>Contact</Link>
+            {navbarData.links.map((link, index) => (
+              <Link key={index} href={link.linkUrl}>
+                {link.text}
+              </Link>
+            ))}
 
             <label className="relative inline-flex items-center cursor-pointer">
               <input
