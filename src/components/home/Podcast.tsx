@@ -1,0 +1,64 @@
+import Image from 'next/image';
+import { MdArrowForward } from 'react-icons/md';
+import GradTitle from '../GradTitle';
+import IconButton from '../IconButton';
+import { Bricolage_Grotesque, Montserrat_Alternates } from 'next/font/google';
+
+const bricolage = Bricolage_Grotesque({
+  subsets: ['latin'],
+  weight: '400',
+});
+
+const montAlt = Montserrat_Alternates({
+  subsets: ['latin'],
+  weight: '300',
+});
+
+const Podcast = () => {
+  return (
+    <section className="relative bg-black w-[90%] rounded-2xl p-8 sm:p-12 overflow-hidden place-self-center">
+      {/* Background Logo */}
+      <div className="absolute bottom-0 right-0 transform translate-x-1/5 translate-y-1/5 -z-0">
+        <Image
+          src="/logo/logo-light.webp"
+          alt="SLIIT FOSS Logo Background"
+          width={600}
+          height={600}
+          className="opacity-15 rotate-[-13.99deg] pointer-events-none"
+          unoptimized
+        />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-row items-center justify-evenly gap-8 sm:gap-12">
+        <Image
+          src="/home/quackcast.webp"
+          alt="SLIIT FOSS Logo"
+          width={250}
+          height={250}
+        />
+
+        <div className="flex flex-col gap-4 text-left">
+          <div>
+            <p
+              className={`text-2xl font-medium tracking-widest text-gray-400 ${bricolage.className}`}
+            >
+              SLIIT FOSS
+            </p>
+            <GradTitle content="PODCAST" textSize="text-5xl" bold />
+          </div>
+          <p className={`${montAlt.className} text-gray-300 max-w-xl text-2xl`}>
+            Tune in to our podcast where we discuss the latest in tech, open
+            source, and student life. Featuring guests from the industry and our
+            own community members.
+          </p>
+          <div className="flex justify-start">
+            <IconButton Icon={MdArrowForward} title="Listen Now" href="#" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Podcast;

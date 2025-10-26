@@ -10,7 +10,7 @@ const HomeSectionLayout: React.FC<HomeSectionLayoutProps> = ({
   children,
 }) => {
   return (
-    <section className="flex flex-col px-[3.5vw] py-[2.5rem] gap-">
+    <section className="flex flex-col px-[3.5vw] py-[2.5rem] my-24 gap-10">
       <GradTitle content={title} />
       {children}
     </section>
