@@ -8,7 +8,7 @@ const bricolageGrotesque = Bricolage_Grotesque({
 const GradTitle = ({
   content,
   bold = false,
-  textSize = 'text-6xl',
+  textSize = 'text-4xl sm:text-6xl',
 }: {
   content: string;
   bold?: boolean;
