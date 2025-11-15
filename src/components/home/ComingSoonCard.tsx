@@ -2,7 +2,6 @@ import { Bricolage_Grotesque, Inter } from 'next/font/google';
 import { MdArrowForward, MdArrowOutward, MdSouthWest } from 'react-icons/md';
 import IconButton from '../IconButton';
 import { memo, useMemo } from 'react';
-import clsx from 'clsx';
 
 const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
@@ -45,76 +44,64 @@ const ComingSoonCard = memo(function ComingSoonCard({
 }: ComingSoonCardProps) {
   const displayAsHovered = isMobile || isHovered;
 
-  // Memoize class names to prevent recreation
+  // Memoize class names without clsx
   const cardClasses = useMemo(
     () =>
-      clsx(
-        'relative min-h-full rounded-3xl p-4 lg:p-6 transition-all duration-500 ease-in-out flex flex-col overflow-hidden',
-        isMobile ? 'h-full' : 'h-[35vw]',
-        displayAsHovered ? 'bg-black' : 'bg-[#D9D9D9]'
-      ),
+      `relative min-h-full rounded-3xl p-4 lg:p-6 transition-all duration-500 ease-in-out flex flex-col overflow-hidden ${
+        isMobile ? 'h-full' : 'h-[35vw]'
+      } ${displayAsHovered ? 'bg-black' : 'bg-[#D9D9D9]'}`,
     [isMobile, displayAsHovered]
   );
 
   const monthChipClasses = useMemo(
     () =>
-      clsx(
-        'transition-opacity duration-300 rounded-full p-[1px]',
+      `transition-opacity duration-300 rounded-full p-[1px] ${
         displayAsHovered ? 'opacity-100' : 'opacity-0'
-      ),
+      }`,
     [displayAsHovered]
   );
 
   const circleClasses = useMemo(
     () =>
-      clsx(
-        'rounded-full flex items-center justify-center bg-white flex-shrink-0 transition-all duration-300',
+      `rounded-full flex items-center justify-center bg-white flex-shrink-0 transition-all duration-300 ${
         isAnotherHovered
           ? 'w-[30px] h-[30px]'
           : 'w-[35px] h-[35px] lg:w-[45px] lg:h-[45px]'
-      ),
+      }`,
     [isAnotherHovered]
   );
 
   const iconClasses = useMemo(
     () =>
-      clsx(
-        'text-black transition-all',
+      `text-black transition-all ${
         isAnotherHovered ? 'text-base' : 'text-lg lg:text-2xl'
-      ),
+      }`,
     [isAnotherHovered]
   );
 
   const titleClasses = useMemo(
     () =>
-      clsx(
-        bricolage.className,
-        'mb-2 transition-all duration-300',
-        displayAsHovered ? 'text-white' : 'text-black',
-        isAnotherHovered ? 'text-2xl' : 'lg:text-4xl text-3xl'
-      ),
+      `${bricolage.className} mb-2 transition-all duration-300 ${
+        displayAsHovered ? 'text-white' : 'text-black'
+      } ${isAnotherHovered ? 'text-2xl' : 'lg:text-4xl text-3xl'}`,
     [displayAsHovered, isAnotherHovered]
   );
 
   const descriptionClasses = useMemo(
     () =>
-      clsx(
-        bricolage.className,
-        'line-clamp-2 mb-3 lg:mb-4 transition-all duration-300',
+      `${bricolage.className} line-clamp-2 mb-3 lg:mb-4 transition-all duration-300 ${
         isAnotherHovered ? 'text-sm' : isMobile ? 'text-base' : 'text-xl'
-      ),
+      }`,
     [isAnotherHovered, isMobile]
   );
 
   const buttonClasses = useMemo(
     () =>
-      clsx(
-        'w-full !mt-0 !justify-between transition-all',
+      `w-full !mt-0 !justify-between transition-all ${
         isAnotherHovered
           ? 'py-1.5 px-3 !text-xs'
-          : 'py-2 px-4 lg:py-3 lg:px-5 !text-sm lg:!text-base',
-        displayAsHovered ? '!bg-white !text-black' : '!bg-black !text-white'
-      ),
+          : 'py-2 px-4 lg:py-3 lg:px-5 !text-sm lg:!text-base'
+      } ${displayAsHovered ? '!bg-white !text-black' : '!bg-black !text-white'}`,
     [isAnotherHovered, displayAsHovered]
   );
 
