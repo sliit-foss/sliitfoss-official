@@ -3,29 +3,34 @@ import { MdArrowForward } from 'react-icons/md';
 import GradTitle from '../GradTitle';
 import IconButton from '../IconButton';
 import { Bricolage_Grotesque, Montserrat_Alternates } from 'next/font/google';
+import { memo } from 'react';
 
 const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
   weight: '400',
+  display: 'swap',
 });
 
 const montAlt = Montserrat_Alternates({
   subsets: ['latin'],
   weight: '300',
+  display: 'swap',
 });
 
-const Podcast = () => {
+const Podcast = memo(() => {
   return (
     <section className="relative bg-black w-[90%] rounded-2xl p-4 sm:p-8 md:p-12 overflow-hidden place-self-center">
       {/* Background Logo */}
-      <div className="absolute bottom-0 right-0 transform translate-x-1/5 translate-y-1/5 -z-0">
+      <div className="absolute bottom-0 right-0 translate-x-1/5 translate-y-1/5 -z-0 pointer-events-none">
         <Image
           src="/logo/logo-light.webp"
           alt="SLIIT FOSS Logo Background"
           width={600}
           height={600}
-          className="opacity-15 rotate-[-13.99deg] pointer-events-none w-[300px] sm:w-[400px] md:w-[600px] h-auto"
+          className="opacity-15 rotate-[-13.99deg] w-[300px] sm:w-[400px] md:w-[600px] h-auto"
           unoptimized
+          loading="lazy"
+          fetchPriority="low"
         />
       </div>
 
@@ -33,10 +38,12 @@ const Podcast = () => {
       <div className="relative z-10 flex flex-row items-center justify-evenly gap-4 sm:gap-8 md:gap-12">
         <Image
           src="/home/quackcast.webp"
-          alt="SLIIT FOSS Logo"
+          alt="QuackCast Podcast Logo"
           width={250}
           height={250}
           className="w-[150px] sm:w-[200px] md:w-[250px] h-auto"
+          unoptimized
+          loading="lazy"
         />
 
         <div className="flex flex-col gap-2 sm:gap-3 md:gap-4 text-left">
@@ -66,6 +73,8 @@ const Podcast = () => {
       </div>
     </section>
   );
-};
+});
+
+Podcast.displayName = 'Podcast';
 
 export default Podcast;

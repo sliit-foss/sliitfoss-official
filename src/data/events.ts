@@ -1,12 +1,13 @@
-export const events: {
+export interface Event {
   topic: string;
   description: string;
   venue: string;
   date: string;
   readMoreLink: string;
   imageUrl: string;
-  status: string;
-}[] = [
+}
+
+export const events: readonly Event[] = [
   {
     topic: 'Annual Tech Summit 2025',
     description:
@@ -16,7 +17,6 @@ export const events: {
     readMoreLink: '#',
     imageUrl:
       'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80',
-    status: 'upcoming',
   },
   {
     topic: 'Open Source Hackathon',
@@ -27,7 +27,6 @@ export const events: {
     readMoreLink: '#',
     imageUrl:
       'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80',
-    status: 'past',
   },
   {
     topic: 'Frontend Meetup: Design systems',
@@ -38,7 +37,6 @@ export const events: {
     readMoreLink: '#',
     imageUrl:
       'https://images.unsplash.com/photo-1526378728765-5d9b4f0e7d6b?auto=format&fit=crop&w=800&q=80',
-    status: 'upcoming',
   },
   {
     topic: 'Career Talk: Software Engineering Paths',
@@ -49,7 +47,6 @@ export const events: {
     readMoreLink: '#',
     imageUrl:
       'https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=800&q=80',
-    status: 'past',
   },
   {
     topic: 'Community Workshop: Git & Open Source',
@@ -60,7 +57,6 @@ export const events: {
     readMoreLink: '#',
     imageUrl:
       'https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=800&q=80',
-    status: 'upcoming',
   },
   {
     topic: 'AI & ML Workshop: Practical Projects',
@@ -71,7 +67,6 @@ export const events: {
     readMoreLink: '#',
     imageUrl:
       'https://images.unsplash.com/photo-1555949963-aa79dcee981d?auto=format&fit=crop&w=800&q=80',
-    status: 'upcoming',
   },
   {
     topic: 'Cloud Native Day',
@@ -82,7 +77,6 @@ export const events: {
     readMoreLink: '#',
     imageUrl:
       'https://images.unsplash.com/photo-1581093458401-1b2d9b9d6a01?auto=format&fit=crop&w=800&q=80',
-    status: 'upcoming',
   },
   {
     topic: 'React Native Hack Night',
@@ -93,7 +87,6 @@ export const events: {
     readMoreLink: '#',
     imageUrl:
       'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80',
-    status: 'past',
   },
   {
     topic: 'Open Source Mentorship Program Kickoff',
@@ -104,7 +97,6 @@ export const events: {
     readMoreLink: '#',
     imageUrl:
       'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
-    status: 'past',
   },
   {
     topic: 'Design Sprint: UX for Developers',
@@ -115,7 +107,6 @@ export const events: {
     readMoreLink: '#',
     imageUrl:
       'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80',
-    status: 'upcoming',
   },
   {
     topic: 'Women in Tech: Leadership Panel',
@@ -126,6 +117,5 @@ export const events: {
     readMoreLink: '#',
     imageUrl:
       'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80',
-    status: 'upcoming',
   },
-];
+] as const;

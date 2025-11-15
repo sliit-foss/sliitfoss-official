@@ -1,33 +1,66 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import HomeSectionLayout from '../layout/HomeSectionLayout';
 import ComingSoonCard from './ComingSoonCard';
 import { events } from '@/data/events';
 
-const ComingSoon = () => {
+const getTodayMidnight = () => {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
+  return today;
+};
 
+const ComingSoon = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 1024); // lg breakpoint
+      setIsMobile(window.innerWidth < 1024);
     };
+
     checkScreenSize();
     window.addEventListener('resize', checkScreenSize);
+
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
-  // Get upcoming events (today and after), sorted oldest to newest, take first 4
-  const upcomingEvents = [...events]
-    .filter((event) => new Date(event.date) >= today)
-    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
-    .slice(0, 4)
-    .map((event) => ({
-      ...event,
-      month: new Date(event.date).toLocaleString('en-US', { month: 'long' }),
-    }));
+  const upcomingEvents = useMemo(() => {
+    const today = getTodayMidnight();
+
+    return [...events]
+      .filter((event) => new Date(event.date) >= today)
+      .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+      .slice(0, 4)
+      .map((event) => ({
+        ...event,
+        month: new Date(event.date).toLocaleString('en-US', { month: 'long' }),
+      }));
+  }, []);
+
+  const handleMouseEnter = useCallback(
+    (index: number) => {
+      if (!isMobile) setHoveredIndex(index);
+    },
+    [isMobile]
+  );
+
+  const handleMouseLeave = useCallback(() => {
+    if (!isMobile) setHoveredIndex(null);
+  }, [isMobile]);
+
+  const getWidthClass = useCallback(
+    (index: number) => {
+      if (isMobile) return 'lg:w-1/4';
+
+      const isHovered = hoveredIndex === index;
+      const isAnotherHovered = hoveredIndex !== null && !isHovered;
+
+      if (isHovered) return 'lg:w-2/4';
+      if (isAnotherHovered) return 'lg:w-[16.66%]';
+      return 'lg:w-1/4';
+    },
+    [hoveredIndex, isMobile]
+  );
 
   return (
     <HomeSectionLayout title="Coming Soon">
@@ -37,17 +70,10 @@ const ComingSoon = () => {
           const isAnotherHovered =
             !isMobile && hoveredIndex !== null && !isHovered;
 
-          let widthClass = 'lg:w-1/4'; // Default width
-          if (isHovered) {
-            widthClass = 'lg:w-2/4'; // Double width for hovered card
-          } else if (isAnotherHovered) {
-            widthClass = 'lg:w-[16.66%]'; // Shrink other cards
-          }
-
           return (
             <div
-              key={index}
-              className={`transition-all duration-500 ease-in-out w-full h-[250px] lg:h-auto ${widthClass}`}
+              key={event.topic}
+              className={`transition-all duration-500 ease-in-out w-full h-[250px] lg:h-auto ${getWidthClass(index)}`}
             >
               <ComingSoonCard
                 title={event.topic}
@@ -57,8 +83,8 @@ const ComingSoon = () => {
                 isHovered={isHovered}
                 isAnotherHovered={isAnotherHovered}
                 isMobile={isMobile}
-                onMouseEnter={() => !isMobile && setHoveredIndex(index)}
-                onMouseLeave={() => !isMobile && setHoveredIndex(null)}
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={handleMouseLeave}
               />
             </div>
           );
