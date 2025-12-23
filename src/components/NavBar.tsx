@@ -9,7 +9,7 @@ export default function NavBar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="w-screen flex items-center justify-center md:mt-[25px]">
+    <div className="fixed z-1000 w-screen flex items-center justify-center md:mt-[25px]">
       <nav className="md:rounded-[24px] bg-gradient-primary p-[2px] w-screen md:w-[70%] md:flex md:items-center md:justify-center">
         <div className="md:rounded-[24px] bg-white text-black flex flex-col justify-between md:flex-row md:w-[100%] px-[5px] py-[5px] md:px-[20px] md:py-[5px]">
           <div className="flex items-center justify-between">
