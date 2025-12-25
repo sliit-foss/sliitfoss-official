@@ -2,10 +2,10 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
-import WebinarCard from './WebinarCard';
-import { webinars } from '@/app/const/Webinars';
+import EventCard from './EventCard';
+import { events } from '@/data/Events';
 
-const WebinarSlider = () => {
+const EventSlider = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [isScrollable, setIsScrollable] = useState(false);
 
@@ -42,9 +42,9 @@ const WebinarSlider = () => {
             isScrollable ? 'justify-start' : 'justify-center'
           }`}
         >
-          {webinars.map((webinar, index) => (
+          {events.map((event, index) => (
             <div key={index} className="snap-start shrink-0">
-              <WebinarCard {...webinar} />
+              <EventCard {...event} />
             </div>
           ))}
         </div>
@@ -72,4 +72,4 @@ const WebinarSlider = () => {
   );
 };
 
-export default WebinarSlider;
+export default EventSlider;

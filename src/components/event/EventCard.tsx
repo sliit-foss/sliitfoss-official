@@ -18,7 +18,7 @@ function EventCard({
   imageUrl: string;
 }) {
   return (
-    <div className="relative w-[300px] h-[400px] rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+    <div className="relative w-[300px] h-[400px] rounded-xl overflow-hidden shadow-lg shrink-0">
       {/* Background image */}
       <Image
         src={imageUrl}
@@ -30,7 +30,7 @@ function EventCard({
       />
 
       {/* Bottom-to-top gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-black to-transparent" />
 
       {/* Text content */}
       <div className="absolute bottom-0 p-5 text-white z-10">

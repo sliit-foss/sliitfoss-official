@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { events } from '@/app/const/Events';
+import { events } from '@/data/Events';
 
 const EventHero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -33,7 +33,7 @@ const EventHero = () => {
             priority={index === 0}
           />
           {/* Overlay gradient for better text visibility */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+          <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent"></div>
 
           {/* Text content */}
           <div className="absolute bottom-10 left-10 text-white p-5">

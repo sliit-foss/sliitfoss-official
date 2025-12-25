@@ -1,12 +1,11 @@
-import EventSlider from '@/app/components/event/EventSlider';
-import GradTitle from '@/app/components/GradTitle';
-import WebinarSlider from '@/app/components/event/WebinarSlider';
-import EventHero from '@/app/components/event/EventHero';
+import EventSlider from '@/components/event/EventSlider';
+import GradTitle from '@/components/GradTitle';
+import WebinarSlider from '@/components/event/WebinarSlider';
+import EventHero from '@/components/event/EventHero';
 
 function Events() {
   return (
     <div>
-      {/* TODO add navbar */}
       <EventHero />
       <br />
       <div className="p-6">
@@ -16,7 +15,6 @@ function Events() {
         <GradTitle content={'Webinars'} />
         <WebinarSlider />
       </div>
-      {/* TODO add footer */}
     </div>
   );
 }
