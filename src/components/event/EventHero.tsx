@@ -16,7 +16,7 @@ const EventHero = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[80vh] overflow-hidden">
+    <div className="z-0 relative w-full h-[80vh] overflow-hidden">
       {/* Image carousel */}
       {events.map((event, index) => (
         <div
@@ -37,7 +37,7 @@ const EventHero = () => {
 
           {/* Text content */}
           <div className="absolute bottom-10 left-10 text-white p-5">
-            <button className="inline-flex items-center gap-1 mt-4 bg-white text-black px-3 py-1 rounded-full text-sm font-medium hover:bg-gray-200 transition">
+            <button className="inline-flex items-center gap-1 mt-4 bg-white text-black px-10 py-1 rounded-full text-sm font-medium hover:bg-gray-200 transition">
               {event.status}
             </button>
             <h1 className="p-3 text-3xl md:text-5xl font-bold">
@@ -48,7 +48,7 @@ const EventHero = () => {
       ))}
 
       {/* Dots indicator */}
-      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2">
+      <div className="z-10 absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2">
         {events.map((_, index) => (
           <div
             key={index}
