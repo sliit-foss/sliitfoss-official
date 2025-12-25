@@ -40,7 +40,9 @@ const EventHero = () => {
             <button className="inline-flex items-center gap-1 mt-4 bg-white text-black px-3 py-1 rounded-full text-sm font-medium hover:bg-gray-200 transition">
               {event.status}
             </button>
-            <h1 className="p-3 text-3xl md:text-5xl font-bold">{event.topic}</h1>
+            <h1 className="p-3 text-3xl md:text-5xl font-bold">
+              {event.topic}
+            </h1>
           </div>
         </div>
       ))}
