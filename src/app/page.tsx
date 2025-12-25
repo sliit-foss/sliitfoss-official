@@ -1,3 +1,4 @@
+import Hero from '@/components/Hero';
 import ComingSoon from '@/components/home/ComingSoon';
 import Podcast from '@/components/home/Podcast';
 import RecentEvents from '@/components/home/RecentEvents';
@@ -26,10 +27,11 @@ export default function Home() {
     }));
 
   return (
-    <div>
+    <main className="bg-white relative">
+      <Hero />
       <RecentEvents events={recentEvents} />
       <Podcast />
       <ComingSoon events={upcomingEvents} />
-    </div>
+    </main>
   );
 }
