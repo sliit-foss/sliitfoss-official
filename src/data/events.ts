@@ -118,4 +118,34 @@ export const events: readonly Event[] = [
     imageUrl:
       'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80',
   },
+  {
+    topic: 'Game Dev Jam: Build in a Weekend',
+    description:
+      'A 48-hour game development jam where participants build a playable game from scratch. Mentors available on-site.',
+    venue: 'Main Library Discussion Room',
+    date: '2026-01-15',
+    readMoreLink: '#',
+    imageUrl:
+      'https://images.unsplash.com/photo-1556438064-2d7646166914?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    topic: 'Cyber Security Awareness Day',
+    description:
+      'Workshops on ethical hacking, defending against common exploits, and securing personal data.',
+    venue: 'PC Lab 05, SLIIT',
+    date: '2026-03-10',
+    readMoreLink: '#',
+    imageUrl:
+      'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    topic: 'Blockchain & Web3 Summit',
+    description:
+      'Exploring the future of decentralized internet, smart contracts, and real-world blockchain applications.',
+    venue: 'Tech Park Auditorium',
+    date: '2026-04-20',
+    readMoreLink: '#',
+    imageUrl:
+      'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80',
+  },
 ] as const;

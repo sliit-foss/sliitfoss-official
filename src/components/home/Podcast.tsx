@@ -3,7 +3,6 @@ import { MdArrowForward } from 'react-icons/md';
 import GradTitle from '../GradTitle';
 import IconButton from '../IconButton';
 import { Bricolage_Grotesque, Montserrat_Alternates } from 'next/font/google';
-import { memo } from 'react';
 
 const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
@@ -17,7 +16,7 @@ const montAlt = Montserrat_Alternates({
   display: 'swap',
 });
 
-const Podcast = memo(() => {
+const Podcast = () => {
   return (
     <section className="relative bg-black w-[90%] rounded-2xl p-4 sm:p-8 md:p-12 overflow-hidden place-self-center">
       {/* Background Logo */}
@@ -67,14 +66,14 @@ const Podcast = memo(() => {
             own community members.
           </p>
           <div className="flex justify-start">
-            <IconButton Icon={MdArrowForward} title="Listen Now" href="#" />
+            <IconButton title="Listen Now" href="#">
+              <MdArrowForward size={16} />
+            </IconButton>
           </div>
         </div>
       </div>
     </section>
   );
-});
-
-Podcast.displayName = 'Podcast';
+};
 
 export default Podcast;

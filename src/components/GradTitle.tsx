@@ -19,7 +19,6 @@ const GradTitle = ({
   return (
     <h2
       className={`${bricolageGrotesque.className} ${textSize} ${weightClass} bg-gradient-to-r from-[#00B7FF] to-[#8C00D7] bg-clip-text text-transparent inline-block w-fit h-fit`}
-      style={{ backgroundClip: 'text' }}
     >
       {content}
     </h2>
