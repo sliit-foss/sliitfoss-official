@@ -42,11 +42,7 @@ const RecentEvents = ({ events }: RecentEventsProps) => {
     <HomeSectionLayout title="Recent Events">
       <div
         ref={scrollContainerRef}
-        className="flex gap-5 overflow-x-auto scrollbar-hide py-4 select-none"
-        style={{
-          msOverflowStyle: 'none',
-          scrollbarWidth: 'none',
-        }}
+        className="flex gap-5 overflow-x-auto no-scrollbar py-4 select-none"
       >
         <style jsx>{`
           div::-webkit-scrollbar {

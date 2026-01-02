@@ -14,7 +14,7 @@ const ComingSoon = ({ events: upcomingEvents }: ComingSoonProps) => {
           <div
             key={event.topic}
             className={`
-              transition-all duration-500 ease-in-out
+              transition-all duration-700 ease
               w-full h-[250px] lg:h-auto lg:w-auto
               flex-none lg:flex-1
               lg:hover:flex-[3]

@@ -1,18 +1,5 @@
-import { Bricolage_Grotesque, Inter } from 'next/font/google';
-import { MdArrowForward, MdArrowOutward, MdSouthWest } from 'react-icons/md';
+import { MdArrowForward, MdNorthEast, MdSouthWest } from 'react-icons/md';
 import IconButton from '../IconButton';
-
-const bricolage = Bricolage_Grotesque({
-  subsets: ['latin'],
-  weight: '300',
-  display: 'swap',
-});
-
-const inter = Inter({
-  subsets: ['latin'],
-  weight: '300',
-  display: 'swap',
-});
 
 interface ComingSoonCardProps {
   title: string;
@@ -28,92 +15,41 @@ export default function ComingSoonCard({
   readMoreLink,
 }: ComingSoonCardProps) {
   return (
-    <div
-      className={`relative min-h-full rounded-3xl p-4 lg:p-6 transition-all duration-500 ease-in-out flex flex-col overflow-hidden border h-full w-full
-        bg-[#D9D9D9] border-[#D9D9D9]
-        lg:group-hover/item:bg-black lg:group-hover/item:border-transparent lg:group-hover/item:bg-[image:linear-gradient(black,black),linear-gradient(90deg,#62DDFF_0%,#B039FF_100%)] lg:group-hover/item:bg-origin-border lg:group-hover/item:[background-clip:padding-box,border-box]
-      `}
-    >
-      {/* Top Section */}
-      <div className="flex justify-between items-start mb-4">
-        {/* Month Chip */}
-        <div
-          className={`transition-opacity duration-300 rounded-full p-[1px] bg-[image:linear-gradient(90deg,#62DDFF_0%,#B039FF_100%)]
-          opacity-0 lg:group-hover/item:opacity-100
-        `}
-        >
-          <div className="px-3 py-1.5 lg:px-4 lg:py-2 rounded-full bg-black">
-            <span
-              className={`${inter.className} text-white text-sm lg:text-xl`}
-            >
-              {month}
-            </span>
+    <div className="grid grid-rows-[auto_1fr] w-full h-full rounded-3xl p-4 gap-4 border text-sm lg:text-base overflow-hidden transition-all duration-700 bg-black border-transparent bg-[image:linear-gradient(black,black),linear-gradient(90deg,#62DDFF_0%,#B039FF_100%)] bg-origin-border [background-clip:padding-box,border-box] lg:bg-[#D9D9D9] lg:!bg-none lg:border-[#D9D9D9] lg:group-hover/item:bg-black lg:group-hover/item:!bg-[image:linear-gradient(black,black),linear-gradient(90deg,#62DDFF_0%,#B039FF_100%)] lg:group-hover/item:bg-origin-border lg:group-hover/item:[background-clip:padding-box,border-box] lg:group-hover/item:border-transparent">
+      {/* Header */}
+      <div className="grid grid-cols-[1fr_auto] gap-2 items-start min-w-0">
+        {/* Month Badge */}
+        <div className="rounded-full p-[1px] bg-gradient-to-r from-[#62DDFF] to-[#B039FF] lg:opacity-0 lg:group-hover/item:opacity-100 transition-opacity duration-300 w-fit">
+          <div className="font-inter text-white text-[0.75em] px-3 py-1.5 rounded-full bg-black whitespace-nowrap">
+            {month}
           </div>
         </div>
 
-        {/* Circle Icon */}
-        <div
-          className={`rounded-full flex items-center justify-center bg-white flex-shrink-0 transition-all duration-300 border-[0.5px] border-dashed border-black
-            w-[35px] h-[35px] lg:w-[45px] lg:h-[45px]
-            lg:group-hover/list:w-[30px] lg:group-hover/list:h-[30px]
-            lg:group-hover/item:w-[45px] lg:group-hover/item:h-[45px]
-          `}
-        >
-          {/* Arrow Outward (Default) */}
-          <MdArrowOutward
-            className={`text-black transition-all block lg:group-hover/item:hidden
-              text-lg lg:text-2xl
-              lg:group-hover/list:text-base
-              lg:group-hover/item:text-2xl
-            `}
-          />
-          {/* South West (Hovered) */}
-          <MdSouthWest
-            className={`text-black transition-all hidden lg:group-hover/item:block
-              text-lg lg:text-2xl
-            `}
-          />
+        {/* Icon */}
+        <div className="grid place-items-center w-8 h-8 rounded-full bg-white border border-dashed border-black shrink-0">
+          <MdNorthEast className="text-black text-base lg:hidden lg:group-hover/item:block" />
+          <MdSouthWest className="text-black text-base hidden lg:block lg:group-hover/item:hidden" />
         </div>
       </div>
 
-      {/* Bottom Section */}
-      <div className="mt-auto">
-        <h3
-          className={`${bricolage.className} mb-2 transition-all duration-300 leading-[var(--tw-leading,var(--text-5xl--line-height))]
-            text-black lg:group-hover/item:text-white
-            text-3xl lg:text-4xl
-            lg:group-hover/list:text-2xl
-            lg:group-hover/item:text-3xl lg:group-hover/item:text-4xl
-          `}
-        >
+      {/* Content */}
+      <div className="grid gap-3 content-end min-w-0">
+        <h3 className="font-bricolage text-[1.5em] leading-tight text-white lg:text-black transition-colors duration-300 lg:group-hover/item:text-white break-words hyphens-auto">
           {title}
         </h3>
-        <p
-          className={`${bricolage.className} line-clamp-2 mb-3 lg:mb-4 transition-all duration-300
-            text-black/60 lg:group-hover/item:text-white/60
-            text-base lg:text-xl
-            lg:group-hover/list:text-sm
-            lg:group-hover/item:text-xl
-          `}
-        >
+
+        <p className="font-bricolage text-[0.875em] leading-snug text-white/60 lg:text-black/60 line-clamp-2 transition-colors duration-300 lg:group-hover/item:text-white/60 break-words">
           {description}
         </p>
 
-        {/* Read More Button */}
-        <div className="p-[1px] rounded-full bg-[image:linear-gradient(90deg,#62DDFF_0%,#B039FF_100%)]">
+        {/* Button */}
+        <div className="rounded-full p-[1px] bg-gradient-to-r from-[#62DDFF] to-[#B039FF] min-w-0">
           <IconButton
             title="Read more"
             href={readMoreLink}
-            styles={`w-full !mt-0 !justify-between transition-all
-              !bg-black !text-white
-              lg:group-hover/item:!bg-white lg:group-hover/item:!text-black
-
-              py-2 px-4 lg:py-3 lg:px-5 !text-sm lg:!text-base
-              lg:group-hover/list:py-1.5 lg:group-hover/list:px-3 lg:group-hover/list:!text-xs
-              lg:group-hover/item:py-3 lg:group-hover/item:px-5 lg:group-hover/item:!text-base
-            `}
+            styles="w-full !mt-0 !justify-between !bg-white !text-black lg:!bg-black lg:!text-white !py-2 !px-4 !text-[0.75em] transition-colors lg:group-hover/item:!bg-white lg:group-hover/item:!text-black !gap-2 min-w-0"
           >
-            <MdArrowForward size={16} />
+            <MdArrowForward className="text-base shrink-0" />
           </IconButton>
         </div>
       </div>

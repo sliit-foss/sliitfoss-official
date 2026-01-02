@@ -2,19 +2,6 @@ import Image from 'next/image';
 import { MdArrowForward } from 'react-icons/md';
 import GradTitle from '../GradTitle';
 import IconButton from '../IconButton';
-import { Bricolage_Grotesque, Montserrat_Alternates } from 'next/font/google';
-
-const bricolage = Bricolage_Grotesque({
-  subsets: ['latin'],
-  weight: '400',
-  display: 'swap',
-});
-
-const montAlt = Montserrat_Alternates({
-  subsets: ['latin'],
-  weight: '300',
-  display: 'swap',
-});
 
 const Podcast = () => {
   return (
@@ -47,9 +34,7 @@ const Podcast = () => {
 
         <div className="flex flex-col gap-2 sm:gap-3 md:gap-4 text-left">
           <div>
-            <p
-              className={`text-sm sm:text-lg md:text-2xl font-medium tracking-widest text-gray-400 ${bricolage.className}`}
-            >
+            <p className="text-sm sm:text-lg md:text-2xl font-medium tracking-widest text-gray-400 font-bricolage">
               SLIIT FOSS
             </p>
             <GradTitle
@@ -58,9 +43,7 @@ const Podcast = () => {
               bold
             />
           </div>
-          <p
-            className={`${montAlt.className} text-gray-300 max-w-xl text-sm sm:text-lg md:text-2xl leading-tight sm:leading-normal`}
-          >
+          <p className="font-mont-alt text-gray-300 max-w-xl text-sm sm:text-lg md:text-2xl leading-tight sm:leading-normal">
             Tune in to our podcast where we discuss the latest in tech, open
             source, and student life. Featuring guests from the industry and our
             own community members.

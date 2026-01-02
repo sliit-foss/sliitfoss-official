@@ -1,11 +1,5 @@
 import { ReactNode } from 'react';
-import { Montserrat } from 'next/font/google';
 import Link from 'next/link';
-
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  weight: '500',
-});
 
 interface IconButtonProps {
   children?: ReactNode;
@@ -30,14 +24,14 @@ const IconButton: React.FC<IconButtonProps> = ({
   if (href && !onClick)
     return (
       <Link href={href} className={buttonStyle}>
-        <span className={montserrat.className}>{title}</span> {children}
+        <span className="font-montserrat">{title}</span> {children}
       </Link>
     );
 
   if (!href && onClick)
     return (
       <button onClick={onClick} className={buttonStyle}>
-        <span className={montserrat.className}>{title}</span> {children}
+        <span className="font-montserrat">{title}</span> {children}
       </button>
     );
 

@@ -4,26 +4,19 @@ import Podcast from '@/components/home/Podcast';
 import RecentEvents from '@/components/home/RecentEvents';
 import { events } from '@/data/events';
 
-const getTodayMidnight = () => {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  return today;
-};
-
 export default function Home() {
-  const today = getTodayMidnight();
+  const today = new Date().toISOString().split('T')[0];
+  const sorted = events.toSorted((a, b) => a.date.localeCompare(b.date));
 
-  const recentEvents = [...events]
-    .filter((event) => new Date(event.date) < today)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
-  const upcomingEvents = [...events]
-    .filter((event) => new Date(event.date) >= today)
-    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+  const recentEvents = sorted.filter((e) => e.date < today).reverse();
+  const upcomingEvents = sorted
+    .filter((e) => e.date >= today)
     .slice(0, 4)
-    .map((event) => ({
-      ...event,
-      month: new Date(event.date).toLocaleString('en-US', { month: 'long' }),
+    .map((e) => ({
+      ...e,
+      month: new Date(`${e.date}T00:00:00`).toLocaleString('en-US', {
+        month: 'long',
+      }),
     }));
 
   return (
