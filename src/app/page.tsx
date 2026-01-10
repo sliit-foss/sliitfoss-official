@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero';
+import BlogPosts from '@/components/home/BlogPosts';
 import ComingSoon from '@/components/home/ComingSoon';
 import Podcast from '@/components/home/Podcast';
 import RecentEvents from '@/components/home/RecentEvents';
@@ -18,6 +19,50 @@ export default function Home() {
         month: 'long',
       }),
     }));
+  // Featured blog post data
+  const featuredBlogPost = {
+    title: 'Latest episode of The "Quackcast"',
+    description:
+      'Get to know our team and understand what tools we use day to day to make our life easier',
+    author: {
+      name: 'Name Surname',
+      role: 'Past President',
+      avatar: '/board-members/PasinduDinal.jpg',
+    },
+    imageUrl: '/home/quackcast-duck.png',
+    readMoreLink: '#',
+  };
+
+  // Sample blog posts data for grid
+  const blogPosts = [
+    {
+      title: 'Blog 1',
+      description:
+        'Sri Lankan function and learning prerequisite, of cool line',
+      author: 'Author Name',
+      date: 'Jan 3',
+      readMoreLink: '#',
+      imageUrl: '/blog/blog1.jpg',
+    },
+    {
+      title: 'Blog 1',
+      description:
+        'Sri Lankan function and learning prerequisite, of cool line',
+      author: 'Author Name',
+      date: 'Jan 3',
+      readMoreLink: '#',
+      imageUrl: '/blog/blog2.jpg',
+    },
+    {
+      title: 'Blog 1',
+      description:
+        'Sri Lankan function and learning prerequisite, of cool line',
+      author: 'Author Name',
+      date: 'Jan 1',
+      readMoreLink: '#',
+      imageUrl: '/blog/blog3.jpg',
+    },
+  ];
 
   return (
     <main className="bg-white relative">
@@ -25,6 +70,7 @@ export default function Home() {
       <RecentEvents events={recentEvents} />
       <Podcast />
       <ComingSoon events={upcomingEvents} />
+      <BlogPosts featuredPost={featuredBlogPost} posts={blogPosts} />
     </main>
   );
 }
