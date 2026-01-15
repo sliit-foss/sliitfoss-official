@@ -30,7 +30,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex justify-between items-center">
-        <h1 className="font-montserrat font-medium text-[20px] text-gray-400">
+        <h1 className="font-montserrat font-medium text-[20px] text-white">
           SLIIT FOSS
         </h1>
         <div className="grid p-[1px] rounded-full bg-gradient-to-r from-[#62DDFF] to-[#B039FF]">
@@ -39,10 +39,10 @@ export default function Footer() {
             className="font-semibold border-transparent"
             onClick={handleBackToTop}
           >
-            Back to Top
+            Back to Top <span style={{ marginLeft: 6 }}>↑</span>
           </Button>
         </div>
-        <div className="hidden md:block font-montserrat font-medium text-[20px] text-gray-400">
+        <div className="hidden md:block font-montserrat font-medium text-[20px] text-white">
           Copyright 2025 SLIIT FOSS
         </div>
       </div>
