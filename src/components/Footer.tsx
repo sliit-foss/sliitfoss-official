@@ -39,7 +39,7 @@ export default function Footer() {
             className="font-semibold border-transparent"
             onClick={handleBackToTop}
           >
-            Back to Top <span style={{ marginLeft: 6 }}>↑</span>
+            Back to Top <span style={{ marginLeft: 6 }}>⭡</span>
           </Button>
         </div>
         <div className="hidden md:block font-montserrat font-medium text-[20px] text-white">
