@@ -43,7 +43,7 @@ export default function Footer() {
           </Button>
         </div>
         <div className="hidden md:block font-montserrat font-medium text-[20px] text-white">
-          Copyright 2025 SLIIT FOSS
+          {footerData.copyright}
         </div>
       </div>
     </div>

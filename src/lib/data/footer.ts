@@ -38,5 +38,5 @@ export const footerData: FooterData = {
       ],
     },
   ],
-  copyright: 'Copyright 2025 SLIIT FOSS',
+  copyright: 'Copyright 2026 SLIIT FOSS',
 };
