@@ -18,12 +18,18 @@ export const footerData: FooterData = {
     {
       title: 'Socials',
       links: [
-        { text: 'Instagram', linkUrl: '#' },
-        { text: 'Facebook', linkUrl: '#' },
-        { text: 'Github', linkUrl: '#' },
-        { text: 'Youtube', linkUrl: '#' },
-        { text: 'LinkedIn', linkUrl: '#' },
-        { text: 'TikTok', linkUrl: '#' },
+        { text: 'Instagram', linkUrl: 'https://www.instagram.com/sliitfoss/' },
+        { text: 'Facebook', linkUrl: 'https://www.facebook.com/sliitfoss/' },
+        { text: 'Github', linkUrl: 'https://github.com/sliit-foss' },
+        {
+          text: 'Youtube',
+          linkUrl: 'https://www.youtube.com/@SLIITFOSSCommunity',
+        },
+        {
+          text: 'LinkedIn',
+          linkUrl: 'https://www.linkedin.com/company/sliit-foss-community/',
+        },
+        { text: 'TikTok', linkUrl: 'https://www.tiktok.com/@sliit.foss' },
       ],
     },
     {
