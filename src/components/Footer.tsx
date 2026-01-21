@@ -31,7 +31,7 @@ export default function Footer() {
       </div>
       <div className="flex justify-between items-center">
         <h1 className="font-montserrat font-medium text-[20px] text-white">
-          SLIIT FOSS
+          SLIIT FOSS Community
         </h1>
         <div className="grid p-[1px] rounded-full bg-gradient-to-r from-[#62DDFF] to-[#B039FF]">
           <Button

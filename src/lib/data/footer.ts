@@ -13,6 +13,8 @@ export interface FooterData {
   copyright: string;
 }
 
+const currentYear = new Date().getFullYear();
+
 export const footerData: FooterData = {
   sections: [
     {
@@ -44,5 +46,5 @@ export const footerData: FooterData = {
       ],
     },
   ],
-  copyright: 'Copyright 2026 SLIIT FOSS',
+  copyright: `Copyright ${currentYear} SLIIT FOSS`,
 };
