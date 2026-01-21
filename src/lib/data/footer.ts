@@ -46,5 +46,5 @@ export const footerData: FooterData = {
       ],
     },
   ],
-  copyright: `Copyright ${currentYear} SLIIT FOSS`,
+  copyright: `Copyright ${currentYear} SLIIT FOSS Community`,
 };
