@@ -1,5 +1,6 @@
-import { MdArrowForward, MdNorthEast, MdSouthWest } from 'react-icons/md';
-import IconButton from '../IconButton';
+import { MdArrowForward } from 'react-icons/md';
+import { MdCalendarToday } from 'react-icons/md';
+import Image from 'next/image';
 
 interface BlogPostCardProps {
   title: string;
@@ -19,43 +20,52 @@ export default function BlogPostCard({
   imageUrl,
 }: BlogPostCardProps) {
   return (
-    <div className="grid grid-rows-[auto_1fr] w-full h-full rounded-3xl p-4 gap-4 border text-sm lg:text-base overflow-hidden transition-all duration-700 bg-black border-transparent bg-[image:linear-gradient(black,black),linear-gradient(90deg,#62DDFF_0%,#B039FF_100%)] bg-origin-border [background-clip:padding-box,border-box] lg:bg-[#D9D9D9] lg:!bg-none lg:border-[#D9D9D9] lg:group-hover/item:bg-black lg:group-hover/item:!bg-[image:linear-gradient(black,black),linear-gradient(90deg,#62DDFF_0%,#B039FF_100%)] lg:group-hover/item:bg-origin-border lg:group-hover/item:[background-clip:padding-box,border-box] lg:group-hover/item:border-transparent">
-      {/* Header */}
-      <div className="grid grid-cols-[1fr_auto] gap-2 items-start min-w-0">
-        {/* Author Badge */}
-        <div className="rounded-full p-[1px] bg-gradient-to-r from-[#62DDFF] to-[#B039FF] lg:opacity-0 lg:group-hover/item:opacity-100 transition-opacity duration-300 w-fit">
-          <div className="font-inter text-white text-[0.75em] px-3 py-1.5 rounded-full bg-black whitespace-nowrap">
-            {author} · {date}
-          </div>
-        </div>
-
-        {/* Icon */}
-        <div className="grid place-items-center w-8 h-8 rounded-full bg-white border border-dashed border-black shrink-0">
-          <MdNorthEast className="text-black text-base lg:hidden lg:group-hover/item:block" />
-          <MdSouthWest className="text-black text-base hidden lg:block lg:group-hover/item:hidden" />
-        </div>
+    <div className="w-[350px] rounded-3xl overflow-hidden border border-gray-200 bg-white shadow-sm flex flex-col">
+      {/* Image */}
+      <div className="relative w-full h-48 bg-gray-100">
+        <Image
+          src={imageUrl || '/home/blog-sample.png'}
+          alt={title}
+          fill
+          className="object-cover"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = '/home/blog-sample.png';
+          }}
+        />
       </div>
 
       {/* Content */}
-      <div className="grid gap-3 content-end min-w-0">
-        <h3 className="font-bricolage text-[1.5em] leading-tight text-white lg:text-black transition-colors duration-300 lg:group-hover/item:text-white break-words hyphens-auto">
+      <div className="p-6 flex flex-col gap-3">
+        {/* Tags */}
+        <div className="flex gap-2 flex-wrap">
+          <span className="px-3 py-1 rounded-full bg-gray-100 text-xs font-medium text-gray-700">
+            Competition
+          </span>
+          <span className="px-3 py-1 rounded-full bg-gray-100 text-xs font-medium text-gray-700">
+            Scripting
+          </span>
+          <span className="px-3 py-1 rounded-full bg-gray-100 text-xs font-medium text-gray-700">
+            Bash
+          </span>
+        </div>
+
+        {/* Title */}
+        <h3 className="font-bricolage text-xl font-semibold leading-tight text-gray-900 line-clamp-2">
           {title}
         </h3>
 
-        <p className="font-bricolage text-[0.875em] leading-snug text-white/60 lg:text-black/60 line-clamp-2 transition-colors duration-300 lg:group-hover/item:text-white/60 break-words">
-          {description}
-        </p>
-
-        {/* Button */}
-        <div className="rounded-full p-[1px] bg-gradient-to-r from-[#62DDFF] to-[#B039FF] min-w-0">
-          <IconButton
-            title="Read more"
-            href={readMoreLink}
-            styles="w-full !mt-0 !justify-between !bg-white !text-black lg:!bg-black lg:!text-white !py-2 !px-4 !text-[0.75em] transition-colors lg:group-hover/item:!bg-white lg:group-hover/item:!text-black !gap-2 min-w-0"
-          >
-            <MdArrowForward className="text-base shrink-0" />
-          </IconButton>
+        {/* Date */}
+        <div className="flex items-center gap-2 text-sm text-gray-600">
+          <MdCalendarToday size={16} />
+          <span>Published on {date}</span>
         </div>
+
+        {/* Read More Button */}
+        <button className="mt-2 px-6 py-2.5 rounded-full bg-black text-white text-sm font-medium flex items-center gap-2 hover:bg-gray-800 transition-colors w-fit">
+          Read more
+          <MdArrowForward size={16} />
+        </button>
       </div>
     </div>
   );

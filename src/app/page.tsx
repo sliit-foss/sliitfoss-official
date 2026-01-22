@@ -4,6 +4,7 @@ import ComingSoon from '@/components/home/ComingSoon';
 import Podcast from '@/components/home/Podcast';
 import RecentEvents from '@/components/home/RecentEvents';
 import { events } from '@/data/events';
+import { blogPosts } from '@/data/blog';
 
 export default function Home() {
   const today = new Date().toISOString().split('T')[0];
@@ -32,37 +33,6 @@ export default function Home() {
     imageUrl: '/home/quackcast-duck.png',
     readMoreLink: '#',
   };
-
-  // Sample blog posts data for grid
-  const blogPosts = [
-    {
-      title: 'Blog 1',
-      description:
-        'Sri Lankan function and learning prerequisite, of cool line',
-      author: 'Author Name',
-      date: 'Jan 3',
-      readMoreLink: '#',
-      imageUrl: '/blog/blog1.jpg',
-    },
-    {
-      title: 'Blog 1',
-      description:
-        'Sri Lankan function and learning prerequisite, of cool line',
-      author: 'Author Name',
-      date: 'Jan 3',
-      readMoreLink: '#',
-      imageUrl: '/blog/blog2.jpg',
-    },
-    {
-      title: 'Blog 1',
-      description:
-        'Sri Lankan function and learning prerequisite, of cool line',
-      author: 'Author Name',
-      date: 'Jan 1',
-      readMoreLink: '#',
-      imageUrl: '/blog/blog3.jpg',
-    },
-  ];
 
   return (
     <main className="bg-white relative">
