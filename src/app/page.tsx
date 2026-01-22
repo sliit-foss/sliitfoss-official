@@ -13,7 +13,7 @@ export default function Home() {
         <h1 className="mb-6 pb-4 text-3xl md:text-4xl font-bold font-bricolage heading-gradient">
           Gallery
         </h1>
-        <div className="h-[80vh]">
+        <div className="w-full">
           <Masonry items={gallery} />
         </div>
       </div>
