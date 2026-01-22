@@ -1,10 +1,14 @@
 import Hero from '@/components/Hero';
+
 import BlogPosts from '@/components/home/BlogPosts';
 import ComingSoon from '@/components/home/ComingSoon';
 import Podcast from '@/components/home/Podcast';
 import RecentEvents from '@/components/home/RecentEvents';
 import { events } from '@/data/events';
 import { blogPosts } from '@/data/blog';
+
+import Footer from '@/components/Footer';
+    
 
 export default function Home() {
   const today = new Date().toISOString().split('T')[0];
@@ -37,10 +41,14 @@ export default function Home() {
   return (
     <main className="bg-white relative">
       <Hero />
+
       <RecentEvents events={recentEvents} />
       <Podcast />
       <ComingSoon events={upcomingEvents} />
       <BlogPosts featuredPost={featuredBlogPost} posts={blogPosts} />
+
+      <Footer />
+
     </main>
   );
 }
