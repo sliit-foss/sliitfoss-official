@@ -1,15 +1,19 @@
+
 import Masonry from '@/components/Masonry';
 import gallery from '@/data/gallery.json';
+import Hero from '@/components/Hero';
 
 export default function Home() {
   return (
-    <main className="p-8">
+    <main className="bg-white relative">
+      <Hero />
       <h1 className="mb-6 text-2xl font-bold font-bricolage heading-gradient">
         Gallery
       </h1>
       <div className="h-[80vh]">
         <Masonry items={gallery} />
       </div>
+
     </main>
   );
 }
