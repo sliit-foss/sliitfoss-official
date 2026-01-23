@@ -4,6 +4,8 @@ import Podcast from '@/components/home/Podcast';
 import RecentEvents from '@/components/home/RecentEvents';
 import { events } from '@/data/events';
 
+import Footer from '@/components/Footer';
+    
 export default function Home() {
   const today = new Date().toISOString().split('T')[0];
   const sorted = events.toSorted((a, b) => a.date.localeCompare(b.date));
@@ -25,6 +27,7 @@ export default function Home() {
       <RecentEvents events={recentEvents} />
       <Podcast />
       <ComingSoon events={upcomingEvents} />
+      <Footer />
     </main>
   );
 }
