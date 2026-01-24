@@ -3,13 +3,16 @@ import GradTitle from '../GradTitle';
 interface HomeSectionLayoutProps {
   title: string;
   children: React.ReactNode;
+
   titleClassName?: string;
   titleGradClassName?: string;
+
 }
 
 const HomeSectionLayout: React.FC<HomeSectionLayoutProps> = ({
   title,
   children,
+
   titleClassName,
   titleGradClassName,
 }) => {
@@ -18,6 +21,7 @@ const HomeSectionLayout: React.FC<HomeSectionLayoutProps> = ({
       <div className={titleClassName}>
         <GradTitle content={title} className={titleGradClassName} />
       </div>
+
       {children}
     </section>
   );

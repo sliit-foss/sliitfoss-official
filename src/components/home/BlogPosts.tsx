@@ -2,15 +2,29 @@
 
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import EventCard from '../event/EventCard';
+import BlogCard from './BlogCard';
 import HomeSectionLayout from '../layout/HomeSectionLayout';
-import { Event } from '@/data/events';
+import BlogHero from './BlogHero';
+import { BlogPost } from '@/data/blog';
 
-interface RecentEventsProps {
-  events: readonly Event[];
+interface FeaturedBlogPost {
+  title: string;
+  description: string;
+  author: {
+    name: string;
+    role: string;
+    avatar: string;
+  };
+  imageUrl: string;
+  readMoreLink: string;
 }
 
-const RecentEvents = ({ events }: RecentEventsProps) => {
+interface BlogPostsProps {
+  featuredPost?: FeaturedBlogPost;
+  posts: readonly BlogPost[];
+}
+
+const BlogPosts = ({ featuredPost, posts }: BlogPostsProps) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -22,10 +36,10 @@ const RecentEvents = ({ events }: RecentEventsProps) => {
       if (e.deltaY !== 0) {
         e.preventDefault();
         gsap.to(container, {
-          scrollLeft: container.scrollLeft + e.deltaY * 4, // Multiplier for speed/feel
-          duration: 1.5, // Longer duration for smoother momentum
-          ease: 'power4.out', // Stronger easing for better "slide" feel
-          overwrite: true, // Ensure new scrolls override old ones immediately
+          scrollLeft: container.scrollLeft + e.deltaY * 4,
+          duration: 1.5,
+          ease: 'power4.out',
+          overwrite: true,
         });
       }
     };
@@ -39,25 +53,27 @@ const RecentEvents = ({ events }: RecentEventsProps) => {
   }, []);
 
   return (
-    <HomeSectionLayout title="Recent Events">
+    <HomeSectionLayout title="Blog posts">
+      {/* Featured Blog Hero */}
+      {featuredPost && <BlogHero {...featuredPost} />}
+
+      {/* Blog Grid - Horizontal Scroll with BlogCard */}
       <div
         ref={scrollContainerRef}
         className="flex gap-5 overflow-x-auto no-scrollbar py-4 select-none"
       >
-
         <style jsx>{`
           div::-webkit-scrollbar {
             display: none;
           }
         `}</style>
 
-
-        {events.map((event) => (
-          <EventCard key={event.topic} {...event} />
+        {posts.map((post) => (
+          <BlogCard key={post.topic} {...post} />
         ))}
       </div>
     </HomeSectionLayout>
   );
 };
 
-export default RecentEvents;
+export default BlogPosts;
