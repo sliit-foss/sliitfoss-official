@@ -1,5 +1,12 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import {
+  Geist,
+  Geist_Mono,
+  Inter,
+  Montserrat,
+  Montserrat_Alternates,
+  Bricolage_Grotesque,
+} from 'next/font/google';
 import NavBar from '@/components/NavBar';
 import './globals.css';
 
@@ -11,6 +18,33 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
+});
+
+const montAlt = Montserrat_Alternates({
+  subsets: ['latin'],
+  weight: '400',
+  display: 'swap',
+  variable: '--font-mont-alt',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const bricolage = Bricolage_Grotesque({
+  subsets: ['latin'],
+  weight: '300',
+  display: 'swap',
+  variable: '--font-bricolage',
+});
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: '500',
+  variable: '--font-montserrat',
 });
 
 export const metadata: Metadata = {
@@ -26,7 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${montAlt.variable} ${montserrat.variable} ${inter.variable} ${bricolage.variable} antialiased`}
       >
         <NavBar />
         {children}
