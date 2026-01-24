@@ -21,7 +21,7 @@ interface FeaturedBlogPost {
 
 interface BlogPostsProps {
   featuredPost?: FeaturedBlogPost;
-  posts: BlogPost[];
+  posts: readonly BlogPost[];
 }
 
 const BlogPosts = ({ featuredPost, posts }: BlogPostsProps) => {

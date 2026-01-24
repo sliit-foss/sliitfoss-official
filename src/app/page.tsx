@@ -11,7 +11,7 @@ import Podcast from '@/components/home/Podcast';
 import RecentEvents from '@/components/home/RecentEvents';
 import { events } from '@/data/events';
 
-import { blogPosts } from '@/data/blog';
+import { blogPosts, featuredBlogPost } from '@/data/blog';
 
 import Gallery from '@/components/Gallery';
 
@@ -33,21 +33,6 @@ export default function Home() {
         month: 'long',
       }),
     }));
-
-  // Featured blog post data
-  const featuredBlogPost = {
-    title: 'Latest episode of The "Quackcast"',
-    description:
-      'Get to know our team and understand what tools we use day to day to make our life easier',
-    author: {
-      name: 'Name Surname',
-      role: 'Past President',
-      avatar: '/board-members/PasinduDinal.jpg',
-    },
-    imageUrl: '/home/quackcast-duck.png',
-    readMoreLink: '#',
-  };
-
 
   return (
     <main className="bg-white relative">
