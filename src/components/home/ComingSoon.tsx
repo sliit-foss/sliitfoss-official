@@ -8,7 +8,11 @@ interface ComingSoonProps {
 
 const ComingSoon = ({ events: upcomingEvents }: ComingSoonProps) => {
   return (
-    <HomeSectionLayout title="Coming Soon">
+    <HomeSectionLayout
+      title="Coming Soon"
+      titleClassName="pb-4"
+      titleGradClassName="leading-[1.15] pb-1"
+    >
       <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 w-full lg:h-[600px] group/list">
         {upcomingEvents.map((event) => (
           <div
