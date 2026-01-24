@@ -1,11 +1,20 @@
+
+import Masonry from '@/components/Masonry';
+import gallery from '@/data/gallery.json';
 import Hero from '@/components/Hero';
 
+
 import BlogPosts from '@/components/home/BlogPosts';
+
 import ComingSoon from '@/components/home/ComingSoon';
 import Podcast from '@/components/home/Podcast';
 import RecentEvents from '@/components/home/RecentEvents';
 import { events } from '@/data/events';
+
 import { blogPosts } from '@/data/blog';
+
+import Gallery from '@/components/Gallery';
+
 
 import Footer from '@/components/Footer';
     
@@ -24,6 +33,7 @@ export default function Home() {
         month: 'long',
       }),
     }));
+
   // Featured blog post data
   const featuredBlogPost = {
     title: 'Latest episode of The "Quackcast"',
@@ -38,6 +48,7 @@ export default function Home() {
     readMoreLink: '#',
   };
 
+
   return (
     <main className="bg-white relative">
       <Hero />
@@ -45,7 +56,12 @@ export default function Home() {
       <RecentEvents events={recentEvents} />
       <Podcast />
       <ComingSoon events={upcomingEvents} />
+
       <BlogPosts featuredPost={featuredBlogPost} posts={blogPosts} />
+
+
+      <Gallery />
+
 
       <Footer />
 
