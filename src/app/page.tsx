@@ -6,6 +6,7 @@ import ComingSoon from '@/components/home/ComingSoon';
 import Podcast from '@/components/home/Podcast';
 import RecentEvents from '@/components/home/RecentEvents';
 import { events } from '@/data/events';
+import GradTitle from '@/components/GradTitle';
 
 import Footer from '@/components/Footer';
     
@@ -28,20 +29,18 @@ export default function Home() {
     <main className="bg-white relative">
       <Hero />
 
-
-      <div className="px-6 md:px-12 lg:px-24">
-        <h1 className="mb-6 pb-4 text-3xl md:text-4xl font-bold font-bricolage heading-gradient">
-          Gallery
-        </h1>
-        <div className="w-full">
-          <Masonry items={gallery} />
-        </div>
-      </div>
-
-
       <RecentEvents events={recentEvents} />
       <Podcast />
       <ComingSoon events={upcomingEvents} />
+
+      <div className="px-[3.5vw]">
+        <div className="pb-8">
+          <GradTitle content="Gallery" className="leading-[1.15] pb-1" />
+        </div>
+        <div className="w-full my-10 md:my-16">
+          <Masonry items={gallery} />
+        </div>
+      </div>
 
       <Footer />
 
