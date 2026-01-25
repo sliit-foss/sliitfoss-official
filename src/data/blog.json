@@ -1,0 +1,66 @@
+[
+  {
+    "topic": "First scripting competition",
+    "description": "Learn about Sri Lanka's first bash scripting competition and how it brought together developers from across the country.",
+    "venue": "John Doe",
+    "date": "31.12.2025",
+    "readMoreLink": "#",
+    "imageUrl": "/home/blog-sample.png"
+  },
+  {
+    "topic": "TypeScript Best Practices",
+    "description": "Explore advanced TypeScript patterns and best practices for building scalable and maintainable applications.",
+    "venue": "Mike Chen",
+    "date": "15.12.2025",
+    "readMoreLink": "#",
+    "imageUrl": "/home/blog-sample.png"
+  },
+  {
+    "topic": "Building Performant Web Apps",
+    "description": "Deep dive into performance optimization techniques for modern web applications. Learn about profiling and optimization strategies.",
+    "venue": "Emily Rodriguez",
+    "date": "10.12.2025",
+    "readMoreLink": "#",
+    "imageUrl": "/home/blog-sample.png"
+  },
+  {
+    "topic": "Getting Started with React",
+    "description": "A comprehensive guide to understanding and implementing React Hooks in your functional components.",
+    "venue": "Sarah Johnson",
+    "date": "05.12.2025",
+    "readMoreLink": "#",
+    "imageUrl": "/home/blog-sample.png"
+  },
+  {
+    "topic": "Open Source Contribution Guide",
+    "description": "Everything you need to know about contributing to open source projects. From finding projects to submitting your first PR.",
+    "venue": "David Park",
+    "date": "28.11.2025",
+    "readMoreLink": "#",
+    "imageUrl": "/home/blog-sample.png"
+  },
+  {
+    "topic": "Docker for Beginners",
+    "description": "Learn how to containerize your applications with Docker. A step-by-step guide for developers new to containers.",
+    "venue": "Alex Martinez",
+    "date": "20.11.2025",
+    "readMoreLink": "#",
+    "imageUrl": "/home/blog-sample.png"
+  },
+  {
+    "topic": "CSS Grid vs Flexbox",
+    "description": "Understanding when to use CSS Grid and when to use Flexbox for your layout needs. A practical comparison.",
+    "venue": "Lisa Chen",
+    "date": "15.11.2025",
+    "readMoreLink": "#",
+    "imageUrl": "/home/blog-sample.png"
+  },
+  {
+    "topic": "API Security Best Practices",
+    "description": "Essential security practices every developer should implement when building and maintaining APIs.",
+    "venue": "James Wilson",
+    "date": "10.11.2025",
+    "readMoreLink": "#",
+    "imageUrl": "/home/blog-sample.png"
+  }
+]
