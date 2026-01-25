@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import WebinarCard from './WebinarCard';
-import { webinars } from '@/data/Webinars';
+import { webinars } from '@/data/webinars';
 
 const WebinarSlider = () => {
   const sliderRef = useRef<HTMLDivElement>(null);

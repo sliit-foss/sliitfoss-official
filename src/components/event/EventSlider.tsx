@@ -2,8 +2,8 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
-import EventCard from './EventCard';
-import { events } from '@/data/Events';
+import EventCard from './EventCardX';
+import { events } from '@/data/events';
 
 const EventSlider = () => {
   const sliderRef = useRef<HTMLDivElement>(null);

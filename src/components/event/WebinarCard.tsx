@@ -1,15 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
+import { Webinar } from '@/data/webinars';
 
-function WebinarCard({
-  topic,
-  readMoreLink,
-  imageUrl,
-}: {
-  topic: string;
-  readMoreLink: string;
-  imageUrl: string;
-}) {
+function WebinarCard({ topic, readMoreLink, imageUrl }: Webinar) {
   return (
     <div className="relative w-[300px] h-[400px] rounded-xl overflow-hidden shadow-lg flex-shrink-0">
       {/* Background image */}

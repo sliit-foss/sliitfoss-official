@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { events } from '@/data/Events';
+import { events } from '@/data/events';
 
 const EventHero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -37,9 +37,6 @@ const EventHero = () => {
 
           {/* Text content */}
           <div className="absolute bottom-10 left-10 text-white p-5">
-            <button className="inline-flex items-center gap-1 mt-4 bg-white text-black px-10 py-1 rounded-full text-sm font-medium hover:bg-gray-200 transition">
-              {event.status}
-            </button>
             <h1 className="p-3 text-3xl md:text-5xl font-bold">
               {event.topic}
             </h1>

@@ -6,7 +6,6 @@ interface HomeSectionLayoutProps {
 
   titleClassName?: string;
   titleGradClassName?: string;
-
 }
 
 const HomeSectionLayout: React.FC<HomeSectionLayoutProps> = ({
