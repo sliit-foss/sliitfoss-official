@@ -76,11 +76,11 @@ export default function WhatWeDo() {
       <div>
         <div
           onScroll={handleSlide}
-          className="md:grid md:grid-cols-2 md:gap-8 overflow-x-scroll no-scrollbar flex gap-8 w-full snap-x snap-mandatory md:overflow-visible md:flex-none items-end"
+          className="md:grid md:grid-cols-2 md:gap-8 overflow-x-scroll no-scrollbar flex gap-8 w-full snap-x snap-mandatory md:overflow-visible md:flex-none"
         >
           <div className="flex-shrink-0 w-[90vw] md:w-full bg-gradient-to-l from-[#8DC6FF] to-[#AD65FF] p-[1px] rounded-3xl snap-start">
-            <div className="bg-white rounded-3xl">
-              <div className="bg-[#AAAAAA]/9 p-6 md:p-10 md:px-20 rounded-3xl">
+            <div className="bg-white rounded-3xl h-full">
+              <div className="bg-[#AAAAAA]/9 p-6 md:p-10 md:px-20 rounded-3xl h-full">
                 <GradTitle
                   content="What we promote?"
                   textSize="text-3xl md:text-5xl"
@@ -94,8 +94,8 @@ export default function WhatWeDo() {
           </div>
 
           <div className="flex-shrink-0 w-[90vw] md:w-full bg-gradient-to-l from-[#8DC6FF] to-[#AD65FF] p-[1px] rounded-3xl snap-start">
-            <div className="bg-white rounded-3xl">
-              <div className="bg-[#AAAAAA]/9 p-6 md:p-10 md:px-20 rounded-3xl">
+            <div className="bg-white rounded-3xl h-full">
+              <div className="bg-[#AAAAAA]/9 p-6 md:p-10 md:px-20 rounded-3xl h-full">
                 <GradTitle
                   content="Contribute & Collaborate"
                   textSize="text-3xl md:text-5xl"
