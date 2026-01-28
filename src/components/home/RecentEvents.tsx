@@ -44,13 +44,11 @@ const RecentEvents = ({ events }: RecentEventsProps) => {
         ref={scrollContainerRef}
         className="flex gap-5 overflow-x-auto no-scrollbar py-4 select-none"
       >
-
         <style jsx>{`
           div::-webkit-scrollbar {
             display: none;
           }
         `}</style>
-
 
         {events.map((event) => (
           <EventCard key={event.topic} {...event} />
