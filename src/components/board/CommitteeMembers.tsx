@@ -11,19 +11,28 @@ export default function CommitteeMembers() {
         </h2>
 
         {/* Images grid */}
-        <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center">
+        <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-6 justify-items-center">
           {committeeMembers.map((member) => (
             <div
               key={member.id}
-              className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden bg-gray-700 mb-8"
+              className="flex flex-col items-center text-center"
             >
-              <Image
-                src={member.image}
-                alt="Committee member"
-                width={96}
-                height={96}
-                className="object-cover w-full h-full"
-              />
+              <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden bg-gray-700 mb-3">
+                <Image
+                  src={member.image}
+                  alt="Committee member"
+                  width={96}
+                  height={96}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+
+              <p className="text-sm font-semibold text-white leading-tight">
+                {member.name}
+              </p>
+              <p className="text-xs text-gray-400 leading-tight">
+                {member.role}
+              </p>
             </div>
           ))}
         </div>
