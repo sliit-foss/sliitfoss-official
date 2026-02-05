@@ -21,7 +21,7 @@ export const navbarData: NavbarData = {
     { text: 'About', linkUrl: '#' },
     { text: 'Events', linkUrl: '#' },
     { text: 'Blogs', linkUrl: '#' },
-    { text: 'Board', linkUrl: '#' },
+    { text: 'Board', linkUrl: '/board' },
     { text: 'Contact', linkUrl: '#' },
   ],
 };
