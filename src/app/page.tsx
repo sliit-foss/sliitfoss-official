@@ -12,9 +12,9 @@ import { events } from '@/data/events';
 import { blogPosts, featuredBlogPost } from '@/data/blog';
 
 import Gallery from '@/components/Gallery';
-
 import Footer from '@/components/Footer';
 import WhatWeDo from '@/components/home/WhatWeDo';
+
 
 export default function Home() {
   const today = new Date().toISOString().split('T')[0];
