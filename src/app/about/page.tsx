@@ -5,6 +5,7 @@ import Image from 'next/image';
 import ExpCard from '../../components/ExpCard';
 import Carousel from '../../components/Carousel';
 import { cards, carouselItems } from '@/lib/data/about';
+import Footer from '../../components/Footer';
 
 export default function About() {
   const [expandedId, setExpandedId] = useState<string | null>('vision');
@@ -13,9 +14,10 @@ export default function About() {
     setExpandedId(expandedId === id ? null : id);
   };
 
-  return (
-    <div className="w-full py-24 md:py-36 space-y-32">
-      <div className="w-full max-w-7xl mx-auto px-6 space-y-32">
+      return (
+        <>
+          <div className="flex flex-col min-h-screen w-full">
+            <div className="flex-1 w-full max-w-7xl mx-auto px-6 py-24 md:py-36 space-y-32">
         <section className="flex flex-col md:flex-row justify-between items-center gap-12">
           <div className="flex flex-col space-y-4">
             <h1 className="text-7xl md:text-9xl font-black uppercase tracking-tight text-black leading-[0.9]">
@@ -87,9 +89,12 @@ export default function About() {
         </div>
       </section>
 
-      <section className="w-full pb-24">
-        <Carousel items={carouselItems} />
-      </section>
-    </div>
+        <section className="w-full pb-24">
+          <Carousel items={carouselItems} />
+        </section>
+      </div>
+      {/* Footer always at the bottom, no extra margin */}
+      <Footer />
+    </>
   );
 }
