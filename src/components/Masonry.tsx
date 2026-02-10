@@ -157,7 +157,10 @@ const Masonry: React.FC<MasonryProps> = ({
     preloadImages(items.map((i) => i.img)).then(() => setImagesReady(true));
   }, [items]);
 
-  const { grid, containerHeight } = useMemo<{ grid: GridItem[], containerHeight: number }>(() => {
+  const { grid, containerHeight } = useMemo<{
+    grid: GridItem[];
+    containerHeight: number;
+  }>(() => {
     if (!width) return { grid: [], containerHeight: 0 };
     const colHeights = new Array(columns).fill(0);
     const gap = 16;
@@ -250,7 +253,11 @@ const Masonry: React.FC<MasonryProps> = ({
   };
 
   return (
-    <div ref={containerRef} className="relative w-full" style={{ height: containerHeight || '100%' }}>
+    <div
+      ref={containerRef}
+      className="relative w-full"
+      style={{ height: containerHeight || '100%' }}
+    >
       {grid.map((item) => (
         <div
           key={item.id}
