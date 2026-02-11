@@ -18,7 +18,7 @@ export const navbarData: NavbarData = {
   },
   links: [
     { text: 'Home', linkUrl: '#' },
-    { text: 'About', linkUrl: '#' },
+    { text: 'About', linkUrl: '/about' },
     { text: 'Events', linkUrl: '#' },
     { text: 'Blogs', linkUrl: '#' },
     { text: 'Board', linkUrl: '#' },
