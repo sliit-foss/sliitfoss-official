@@ -15,7 +15,6 @@ import Gallery from '@/components/Gallery';
 import Footer from '@/components/Footer';
 import WhatWeDo from '@/components/home/WhatWeDo';
 
-
 export default function Home() {
   const today = new Date().toISOString().split('T')[0];
   const sorted = events.toSorted((a, b) => a.date.localeCompare(b.date));
