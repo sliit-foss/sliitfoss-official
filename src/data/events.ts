@@ -36,7 +36,7 @@ export const events: readonly Event[] = [
     date: '2025-10-02',
     readMoreLink: '#',
     imageUrl:
-      'https://images.unsplash.com/photo-1526378728765-5d9b4f0e7d6b?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80',
   },
   {
     topic: 'Career Talk: Software Engineering Paths',
@@ -66,7 +66,7 @@ export const events: readonly Event[] = [
     date: '2025-11-22',
     readMoreLink: '#',
     imageUrl:
-      'https://images.unsplash.com/photo-1555949963-aa79dcee981d?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=800&q=80',
   },
   {
     topic: 'Cloud Native Day',
@@ -76,7 +76,7 @@ export const events: readonly Event[] = [
     date: '2025-10-18',
     readMoreLink: '#',
     imageUrl:
-      'https://images.unsplash.com/photo-1581093458401-1b2d9b9d6a01?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=800&q=80',
   },
   {
     topic: 'React Native Hack Night',
